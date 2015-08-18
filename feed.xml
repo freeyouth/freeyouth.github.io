@@ -1,31 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>freeyouth&#39;s website</title>
-    <description>人生是一场修行.
+    <title>freeyouth的小站</title>
+    <description>人生是一场修行,修行的终点叫自由。
 </description>
-    <link>http://freeyouth.me/</link>
-    <atom:link href="http://freeyouth.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Aug 2015 21:26:29 +0800</pubDate>
-    <lastBuildDate>Wed, 12 Aug 2015 21:26:29 +0800</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 18 Aug 2015 16:25:41 +0800</pubDate>
+    <lastBuildDate>Tue, 18 Aug 2015 16:25:41 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>非专业健身</title>
-        <description>&lt;ul&gt;
-  &lt;li&gt;举腿&lt;/li&gt;
-  &lt;li&gt;俯卧撑&lt;/li&gt;
-  &lt;li&gt;健腹轮&lt;/li&gt;
-  &lt;li&gt;桥&lt;/li&gt;
-  &lt;li&gt;其他&lt;/li&gt;
-&lt;/ul&gt;
+        <title>轻量级健身快速入门</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;现代病&lt;/h3&gt;
+&lt;p&gt;作为一个IT从业人员，一天至少坐在电脑前8小时。
+而且这个行业加班更是家常便饭，动不动就是半夜回家的，再加上极度缺少运动
+几年下来，小青年也扛不住，各种毛病都出来，长久不了。
+小哥我也是身处其中，工作已有5年，从精壮小伙马上要变成海绵宝宝了。不能忍！想当年…此处省略一万字。
+于是我开始了健身计划，两个月狂甩十斤，腹部基本没什么赘肉了，腹肌啊线条啊都也是渐渐成型。
+所以写这篇文章是来谈谈我的健身经验和感受。如果上来就想练六块腹肌人鱼线马甲线，容易扯着蛋。但是从简单的开始，练起来，一切都会有的！&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;保持简单，快速开始&lt;/h3&gt;
+&lt;p&gt;通常，想健身但没开始的原因是没时间，工作太累，健身房花钱等等。的确，我深有体会，这些绝对不是借口，是客观情况，它们都会导致健身计划夭折。
+而快速开始的秘诀就是减少依赖，保持简单。
+健身项目我推荐《囚徒健身》，自身体重健身，主要依赖自身体重，需要很少的器械，练起来简单方便。
+书中有比较完备的’六艺十式’的进阶体系,&lt;/p&gt;
+
+&lt;p&gt;一个狭小的房间，一个强壮的男人，挑战着自己体能的极限。周围什么都没有，只有冰冷墙和自己的身体。
+很有画面感，这本书很酷！&lt;/p&gt;
+
+&lt;p&gt;昂贵的器械,华丽的健身房，扭曲的动作，都是现代器械供应商、健身会所、杂志、网站等商人的营销策略。
+如果你想健身，这些都不是必须的。必须的是你的身体，然后让它们动起来！&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;健身项目和计划&lt;/h3&gt;
+&lt;p&gt;早晨8点起床，&lt;/p&gt;
+
+&lt;p&gt;平卧蛙举腿x25 3组&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/平卧蛙举腿.jpg&quot; alt=&quot;平卧蛙举腿&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;标准俯卧撑x20 2组&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/标准俯卧撑.jpg&quot; alt=&quot;标准俯卧撑&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;顶桥x15 2组&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/顶桥.jpg&quot; alt=&quot;顶桥&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;乌鸦式倒立撑30s&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/乌鸦式倒立撑.jpg&quot; alt=&quot;乌鸦式倒立撑&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;标准深蹲x10 2组&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/标准深蹲.jpg&quot; alt=&quot;标准深蹲&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;整个项目做完30-50分钟左右，9点10左右出门上班。
+一个简单的健身计划表，这里举例的难度对于入门可能有点偏难，没关系，书中有对应项目更简单的动作。
+可以把上面的动作作为第一阶段的”终极目标”。
+引体向上我没有加入进去，因为需要一个比较大器械，但是作为起步，少一个也无所谓。
+项目要根据自己的体能情况去选。这里的只是针对我自己当前阶段的项目。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;一些提示&lt;/h4&gt;
+&lt;p&gt;动作不能过快，控制好速度，否则只是靠惯性，肌肉在部分位置时却没有发挥作用。
+所有的动作都会对关节造成磨损，所有不宜太过，注意休息。
+切记受伤，练一天，休息一周得不偿失。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;完成计划&lt;/h3&gt;
+&lt;p&gt;努力完成任务，无法完成的挫败感会使你失去信心。
+为了更好的完成任务，计划要合理，不要目标太高或盲目加量。
+调整速度，或者动作幅度都可以非常快的降低难度。
+刚开始没必要追求完美，降低难度没有问题。重要的是完成。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;离开始只差早起&lt;/h3&gt;
+&lt;p&gt;场地，器械都可以不是问题，唯独你需要拿出一定的时间来。
+早起40-60分钟，稍微清醒下热热身。
+然后按照你的健身计划开始吧，少年！&lt;/p&gt;
+
+&lt;p&gt;附： &lt;a href=&quot;/assets/囚徒健身六艺十式图文详解.xls&quot;&gt;健身六艺十式&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 12 Aug 2015 00:38:46 +0800</pubDate>
-        <link>http://freeyouth.me/%E5%81%A5%E8%BA%AB/2015/08/12/%E9%9D%9E%E4%B8%93%E4%B8%9A%E5%81%A5%E8%BA%AB.html</link>
-        <guid isPermaLink="true">http://freeyouth.me/%E5%81%A5%E8%BA%AB/2015/08/12/%E9%9D%9E%E4%B8%93%E4%B8%9A%E5%81%A5%E8%BA%AB.html</guid>
+        <link>/%E5%81%A5%E8%BA%AB/2015/08/12/lightweight-fitness.html</link>
+        <guid isPermaLink="true">/%E5%81%A5%E8%BA%AB/2015/08/12/lightweight-fitness.html</guid>
         
         
         <category>健身</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 11 Aug 2015 00:38:46 +0800</pubDate>
+        <link>/jekyll/update/2015/08/11/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">/jekyll/update/2015/08/11/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
         
       </item>
     
