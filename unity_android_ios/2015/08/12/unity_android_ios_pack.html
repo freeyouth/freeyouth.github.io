@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Unity Android&IOS 打包</title>
+  <title>Unity Android&IOS 命令行打包</title>
   <meta name="description" content="unity导出android和xcode工程，并命令行导出相应的apk和ipa包">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -57,12 +57,15 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Unity Android&IOS 打包</h1>
+    <h1 class="post-title">Unity Android&IOS 命令行打包</h1>
     <p class="post-meta">Aug 12, 2015</p>
   </header>
 
   <article class="post-content">
     <h3 id="unityandroidios">Unity导出Android&amp;IOS工程</h3>
+
+<p>一个导出Xcode工程的例子，Android工程类似。
+CommandBuild.cs</p>
 
 <div class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">static</span> <span class="k">public</span> <span class="k">void</span> <span class="nf">BuildXcodeProject</span><span class="p">()</span>
 <span class="p">{</span>
@@ -73,6 +76,8 @@
 	<span class="c1">//选择BuildTarget目标平台，xcode,android或者windows</span>
 	<span class="n">BuildPipeline</span><span class="p">.</span><span class="n">BuildPlayer</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="n">Ios_Project_Dir</span><span class="p">,</span> <span class="n">BuildTarget</span><span class="p">.</span><span class="n">iPhone</span><span class="p">,</span> <span class="n">BuildOptions</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
 <span class="p">}</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Unity -quit -batchmode -projectPath <span class="k">${</span><span class="nv">ProjectPath</span><span class="k">}</span> -executeMethod CommmandBuild.BuildXcodeProject</code></pre></div>
 
 <h3 id="androidapk">Android工程导出apk</h3>
 

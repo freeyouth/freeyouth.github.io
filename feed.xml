@@ -6,13 +6,16 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Aug 2015 21:35:00 +0800</pubDate>
-    <lastBuildDate>Tue, 18 Aug 2015 21:35:00 +0800</lastBuildDate>
+    <pubDate>Wed, 19 Aug 2015 11:45:59 +0800</pubDate>
+    <lastBuildDate>Wed, 19 Aug 2015 11:45:59 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Unity Android&amp;IOS 打包</title>
+        <title>Unity Android&amp;IOS 命令行打包</title>
         <description>&lt;h3 id=&quot;unityandroidios&quot;&gt;Unity导出Android&amp;amp;IOS工程&lt;/h3&gt;
+
+&lt;p&gt;一个导出Xcode工程的例子，Android工程类似。
+CommandBuild.cs&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;BuildXcodeProject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -23,6 +26,8 @@
 	&lt;span class=&quot;c1&quot;&gt;//选择BuildTarget目标平台，xcode,android或者windows&lt;/span&gt;
 	&lt;span class=&quot;n&quot;&gt;BuildPipeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BuildPlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;levels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ios_Project_Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BuildTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iPhone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BuildOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Unity -quit -batchmode -projectPath &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ProjectPath&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; -executeMethod CommmandBuild.BuildXcodeProject&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;androidapk&quot;&gt;Android工程导出apk&lt;/h3&gt;
 
