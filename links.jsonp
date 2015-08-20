@@ -2,12 +2,12 @@ callback([
 
   {
     "text": "轻量级健身快速入门",
-    "href": "freeyouth.me/%E5%81%A5%E8%BA%AB/lightweight-fitness"
+    "href": "http://www.freeyouth.me/%E5%81%A5%E8%BA%AB/lightweight-fitness"
   } ,
 
   {
     "text": "Unity Android IOS 命令行打包",
-    "href": "freeyouth.me/unity/unity_android_ios_pack"
+    "href": "http://www.freeyouth.me/unity/unity_android_ios_pack"
   } 
 
 ])
