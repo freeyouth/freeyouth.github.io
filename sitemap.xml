@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc></loc>
+        <loc>freeyouth.me</loc>
     </url>
     
     
     <url>
-        <loc>/404.html</loc>
+        <loc>freeyouth.me/404.html</loc>
     </url>
     
     <url>
-        <loc>/about/index.html</loc>
+        <loc>freeyouth.me/about/index.html</loc>
     </url>
     
     <url>
-        <loc>/categories/index.html</loc>
+        <loc>freeyouth.me/categories/index.html</loc>
     </url>
     
     <url>
-        <loc>/featured/</loc>
+        <loc>freeyouth.me/featured/</loc>
     </url>
     
     <url>
-        <loc>/feed.xml</loc>
+        <loc>freeyouth.me/feed.xml</loc>
     </url>
     
     <url>
-        <loc>/index.html</loc>
+        <loc>freeyouth.me/index.html</loc>
     </url>
     
     <url>
-        <loc>/links.jsonp</loc>
+        <loc>freeyouth.me/links.jsonp</loc>
     </url>
     
     <url>
-        <loc>/search.json</loc>
+        <loc>freeyouth.me/search.json</loc>
     </url>
     
     <url>
-        <loc>/sitemap.xml</loc>
+        <loc>freeyouth.me/sitemap.xml</loc>
     </url>
     
     <url>
-        <loc>/tags/index.html</loc>
+        <loc>freeyouth.me/tags/index.html</loc>
     </url>
     
 
     
     <url>
-        <loc>/unity/unity_android_ios_pack</loc>
+        <loc>freeyouth.me/unity/unity_android_ios_pack</loc>
     </url>
     
     <url>
-        <loc>/%E5%81%A5%E8%BA%AB/lightweight-fitness</loc>
+        <loc>freeyouth.me/%E5%81%A5%E8%BA%AB/lightweight-fitness</loc>
     </url>
     
 </urlset>
