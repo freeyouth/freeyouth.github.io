@@ -17,8 +17,8 @@ Description: Awesome dude, awesome life
 -->
 <head>
 <meta charset="utf-8">
-<title>UNITY ANDROID IOS 命令行打包 &vert; NOTEPAD</title>
-<meta name="description" content="unity导出android和xcode工程，并命令行导出相应的apk和ipa包">
+<title>UNITY贴图 分离及合成透明通道 &vert; NOTEPAD</title>
+<meta name="description" content="">
 <meta name="keywords" content="Unity">
 
 
@@ -26,9 +26,9 @@ Description: Awesome dude, awesome life
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity Android IOS 命令行打包">
-<meta property="og:description" content="unity导出android和xcode工程，并命令行导出相应的apk和ipa包">
-<meta property="og:url" content="http://www.freeyouth.me/unity/unity_android_ios_pack">
+<meta property="og:title" content="Unity贴图 分离及合成透明通道">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://www.freeyouth.me/unity/unity-rbg-a-shader">
 <meta property="og:site_name" content="Notepad">
 <meta property="og:image" content="http://www.freeyouth.me/images/">
 
@@ -36,7 +36,7 @@ Description: Awesome dude, awesome life
 
 
 
-<link rel="canonical" href="http://www.freeyouth.me/unity/unity_android_ios_pack">
+<link rel="canonical" href="http://www.freeyouth.me/unity/unity-rbg-a-shader">
 <link href="http://www.freeyouth.me/feed.xml" type="application/atom+xml" rel="alternate" title="Notepad Feed">
 
 
@@ -118,77 +118,91 @@ Description: Awesome dude, awesome life
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>Unity Android IOS 命令行打包</h1>
-                            <p>by <strong>freeyouth</strong> &#8212; on <a href="http://www.freeyouth.me/tags/index.html#Unity" data-toggle="tooltip" title="Posts tagged with Unity" rel="tag">Unity</a> <strong><time datetime="2015-08-18T00:00:00+08:00">18 Aug 2015</time></strong></p>
+                            <h1>Unity贴图 分离及合成透明通道</h1>
+                            <p>by <strong>freeyouth</strong> &#8212; on <a href="http://www.freeyouth.me/tags/index.html#Unity" data-toggle="tooltip" title="Posts tagged with Unity" rel="tag">Unity</a> <strong><time datetime="2015-09-11T00:00:00+08:00">11 Sep 2015</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h3 id="unityandroidios">Unity导出Android&amp;IOS工程</h3>
+            <div><p>贴图分离透明通道的相关好处，可以查看这篇文章。
+<a href="http://blog.csdn.net/zzxiang1985/article/details/43339273">http://blog.csdn.net/zzxiang1985/article/details/43339273</a></p>
 
-<p>一个导出Xcode工程的例子，Android工程类似。
-CommandBuild.cs</p>
+<p>这里我提供一个简单的实现方法</p>
 
-<div class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">static</span> <span class="k">public</span> <span class="k">void</span> <span class="nf">BuildXcodeProject</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="c1">//设置编译参数</span>
-	<span class="n">PlayerSettings</span><span class="p">.</span><span class="n">SetScriptingDefineSymbolsForGroup</span><span class="p">(</span><span class="n">BuildTargetGroup</span><span class="p">.</span><span class="n">iPhone</span><span class="p">,</span> <span class="s">&quot;debug&quot;</span><span class="p">);</span>
-	<span class="c1">//选择需要编译的场景</span>
-	<span class="kt">string</span><span class="p">[]</span> <span class="n">levels</span> <span class="p">=</span> <span class="p">{</span> <span class="s">&quot;Assets/Resources/Scene/Test1.unity&quot;</span><span class="p">,</span> <span class="s">&quot;Assets/Resources/Scene/Test2.unity&quot;</span> <span class="p">};</span>
-	<span class="c1">//选择BuildTarget目标平台，xcode,android或者windows</span>
-	<span class="n">BuildPipeline</span><span class="p">.</span><span class="n">BuildPlayer</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="n">Ios_Project_Dir</span><span class="p">,</span> <span class="n">BuildTarget</span><span class="p">.</span><span class="n">iPhone</span><span class="p">,</span> <span class="n">BuildOptions</span><span class="p">.</span><span class="n">None</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<p>首先把32bits的透明图片分成两张24bits的不透明图片</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Unity -quit -batchmode -projectPath <span class="k">${</span><span class="nv">ProjectPath</span><span class="k">}</span> -executeMethod CommmandBuild.BuildXcodeProject</code></pre></div>
+<div class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="na">[MenuItem(&quot;Assets/Depart RGB and Alpha Channel&quot;)]</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">SeperateAllTexturesRGBandAlphaChannel</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">string</span> <span class="n">outputRGBPath</span> <span class="p">=</span> <span class="n">EditorUtility</span><span class="p">.</span><span class="n">SaveFilePanel</span><span class="p">(</span><span class="s">&quot;SaveRGBResource&quot;</span><span class="p">,</span> <span class="n">Application</span><span class="p">.</span><span class="n">dataPath</span><span class="p">,</span> <span class="s">&quot;New Resource&quot;</span><span class="p">,</span> <span class="s">&quot;png&quot;</span><span class="p">);</span>
+        <span class="kt">string</span> <span class="n">outputAlphaPath</span> <span class="p">=</span> <span class="n">EditorUtility</span><span class="p">.</span><span class="n">SaveFilePanel</span><span class="p">(</span><span class="s">&quot;SaveAlphaResource&quot;</span><span class="p">,</span> <span class="n">Application</span><span class="p">.</span><span class="n">dataPath</span><span class="p">,</span> <span class="s">&quot;New Resource&quot;</span><span class="p">,</span> <span class="s">&quot;png&quot;</span><span class="p">);</span>
+        <span class="n">Texture2D</span> <span class="n">sourcetex</span> <span class="p">=</span> <span class="n">Selection</span><span class="p">.</span><span class="n">activeObject</span> <span class="k">as</span> <span class="n">Texture2D</span><span class="p">;</span> 
+        <span class="k">if</span> <span class="p">(</span><span class="n">sourcetex</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Load Texture Failed&quot;</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Texture2D</span> <span class="n">rgbTex</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Texture2D</span><span class="p">(</span><span class="n">sourcetex</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sourcetex</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">TextureFormat</span><span class="p">.</span><span class="n">RGB24</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+        <span class="n">rgbTex</span><span class="p">.</span><span class="n">SetPixels</span><span class="p">(</span><span class="n">sourcetex</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">());</span>
+        <span class="n">rgbTex</span><span class="p">.</span><span class="n">Apply</span><span class="p">();</span>
 
-<h3 id="androidapk">Android工程导出apk</h3>
+        <span class="n">Color</span><span class="p">[]</span> <span class="n">sourceColors</span> <span class="p">=</span> <span class="n">sourcetex</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span>
+        <span class="n">Color</span><span class="p">[]</span> <span class="n">colorsAlpha</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">[</span><span class="n">sourceColors</span><span class="p">.</span><span class="n">Length</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">sourceColors</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="p">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">colorsAlpha</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span> <span class="p">=</span> <span class="n">sourceColors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">a</span><span class="p">;</span>
+            <span class="n">colorsAlpha</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">g</span> <span class="p">=</span> <span class="n">sourceColors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">a</span><span class="p">;</span>
+            <span class="n">colorsAlpha</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">b</span> <span class="p">=</span> <span class="n">sourceColors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">a</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Texture2D</span> <span class="n">alphaTex</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Texture2D</span><span class="p">(</span><span class="n">sourcetex</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">sourcetex</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">TextureFormat</span><span class="p">.</span><span class="n">RGB24</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+        <span class="n">alphaTex</span><span class="p">.</span><span class="n">SetPixels</span><span class="p">(</span><span class="n">colorsAlpha</span><span class="p">);</span>
+        <span class="n">alphaTex</span><span class="p">.</span><span class="n">Apply</span><span class="p">();</span>
 
-<p>1、ant方式，使用android update生成build.xml。</p>
+        <span class="kt">byte</span><span class="p">[]</span> <span class="n">bytes</span> <span class="p">=</span> <span class="n">rgbTex</span><span class="p">.</span><span class="n">EncodeToPNG</span><span class="p">();</span>
+        <span class="n">File</span><span class="p">.</span><span class="n">WriteAllBytes</span><span class="p">(</span><span class="n">outputRGBPath</span><span class="p">,</span> <span class="n">bytes</span><span class="p">);</span>
+        <span class="kt">byte</span><span class="p">[]</span> <span class="n">alphabytes</span> <span class="p">=</span> <span class="n">alphaTex</span><span class="p">.</span><span class="n">EncodeToPNG</span><span class="p">();</span>
+        <span class="n">File</span><span class="p">.</span><span class="n">WriteAllBytes</span><span class="p">(</span><span class="n">outputAlphaPath</span><span class="p">,</span> <span class="n">alphabytes</span><span class="p">);</span>
+    <span class="p">}</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">//android list target 可列举出当前可用的target，-n 工程名，-p 工程路径
-android update -n <span class="nv">$name</span> -p <span class="nv">$path</span> -t target</code></pre></div>
+<p>任意选择一张透明的xxx.png，执行上面命令保存出两张不透明图片，分别为，xxx_RGB.png，xxx_Alpha.png</p>
 
-<p>2、gradle方式,新的项目都使用这种方式了。</p>
+<p>原图：</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">//工程gradle修改</span>
-<span class="err">sigingConfigs</span><span class="p">{</span>
-	<span class="err">releaseKeystore{</span>
-		<span class="err">keyAlias</span> <span class="err">&#39;xxx&#39;</span>
-		<span class="err">keyPassword</span> <span class="err">&#39;1111111&#39;</span>
-		<span class="err">storeFile</span> <span class="err">file(&#39;c:/xxx/release.keystore&#39;)</span>
-		<span class="err">storePassword</span> <span class="err">&#39;111111&#39;</span>
-	<span class="p">}</span>
-<span class="err">}</span>
-<span class="err">buildTypes</span><span class="p">{</span>
-	<span class="err">release{</span>
-		<span class="err">...</span>
-		<span class="err">siginingConfig</span> <span class="err">signingConfigs.releaseKeystore</span>
-	<span class="p">}</span>
-<span class="err">}</span></code></pre></div>
+<p><img src="/assets/seperate_rgba/HeroHeadAtlas.png" alt="HeroHeadAtlas" /></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">//命令行执行
-gradle projectname:assembleRelease</code></pre></div>
+<p>去掉透明通道：</p>
 
-<h3 id="ios-xcodeipa">IOS xcode工程导出ipa</h3>
+<p><img src="/assets/seperate_rgba/HeroHeadAtlas_RGB.png" alt="HeroHeadAtlas_RGB" /></p>
 
-<p>1、编译出.app文件，从.app打包ipa</p>
+<p>透明部分</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="k">${</span><span class="nv">XCODE_PATH</span><span class="k">}</span>
-xcodebuild -target Unity-iPhone clean
-xcodebuild -target Unity-iPhone -configuration Release
-xcrun -sdk iphoneos PackageApplication -v <span class="nv">$XCODE_PATH</span>/build/<span class="k">${</span><span class="nv">APPNAME</span><span class="k">}</span> -o <span class="nv">$WORK_PATH</span>/<span class="k">${</span><span class="nv">IPANAME</span><span class="k">}</span>.ipa</code></pre></div>
+<p><img src="/assets/seperate_rgba/HeroHeadAtlas_Alpha.png" alt="HeroHeadAtlas_RGB" /></p>
 
-<p>2、从archive导出ipa。(貌似比从.app打包的ipa要小很多…)</p>
+<h3 id="shadershader">修改shader,用来合成两张不透明的图片。shader很简单。</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">//清理
-<span class="nb">cd</span> <span class="k">${</span><span class="nv">XCODE__PATH</span><span class="k">}</span>
-xcodebuild clean -project ./Unity-iPhone.xcodeproj -configuration <span class="k">${</span><span class="nv">CONFIGURATION</span><span class="k">}</span> -alltargets
-//archive
-xcodebuild archive -project ./Unity-iPhone.xcodeproj -scheme <span class="s2">&quot;Unity-iPhone&quot;</span> -archivePath sanguo.xcarchive -configuration Release
-//从archive导出ipa
-xcodebuild -exportArchive -archivePath sanguo.xcarchive -exportPath <span class="k">${</span><span class="nv">WORK_PATH</span><span class="k">}</span>/<span class="k">${</span><span class="nv">IPANAME</span><span class="k">}</span>.ipa -exportFormat ipa -exportProvisioningProfile <span class="k">${</span><span class="nv">CODESIGN</span><span class="k">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">fixed4 frag <span class="o">(</span>v2f IN<span class="o">)</span> : COLOR
+	<span class="o">{</span>
+		//fixed4 <span class="nv">col</span> <span class="o">=</span> tex2D<span class="o">(</span>_MainTex, IN.texcoord<span class="o">)</span> * IN.color<span class="p">;</span>
+		//return col<span class="p">;</span>
+		fixed4 col<span class="p">;</span>  
+		col.rgb <span class="o">=</span> tex2D<span class="o">(</span>_MainTex, IN.texcoord<span class="o">)</span>.rgb<span class="p">;</span>  
+		col.a <span class="o">=</span> tex2D<span class="o">(</span>_AlphaTex, IN.texcoord<span class="o">)</span>.r<span class="p">;</span>  
+		<span class="k">return</span> col * IN.color<span class="p">;</span>  
+	<span class="o">}</span></code></pre></div>
+
+<p>选择上面两张图片到的材质球上，</p>
+
+<p><img src="/assets/seperate_rgba/select_rgb_a.png" alt="select_rgb_a" /></p>
+
+<p>效果如下：</p>
+
+<p><img src="/assets/seperate_rgba/rgb_a_result.png" alt="rgb_a_result" /></p>
+
+<p>其中alpha那张图尺寸我缩小了一半。缩的太小透明部分的界限会有点模糊。
+可根据图片实际效果选择导入参数。
+这个优化方案修改只在美术端进行，程序无需做任何修改，我很喜欢~</p>
 
 
             </div>
@@ -196,15 +210,15 @@ xcodebuild -exportArchive -archivePath sanguo.xcarchive -exportPath <span class=
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Unity Android IOS 命令行打包&quot;%20http://www.freeyouth.me/unity/unity_android_ios_pack%20via%20&#64;"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Unity贴图 分离及合成透明通道&quot;%20http://www.freeyouth.me/unity/unity-rbg-a-shader%20via%20&#64;"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://www.freeyouth.me/unity/unity_android_ios_pack"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://www.freeyouth.me/unity/unity-rbg-a-shader"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=http://www.freeyouth.me/unity/unity_android_ios_pack"
+                <a class="google-icon" href="https://plus.google.com/share?url=http://www.freeyouth.me/unity/unity-rbg-a-shader"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>

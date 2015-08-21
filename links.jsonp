@@ -13,6 +13,11 @@ callback([
   {
     "text": "三体读后感之硬科幻",
     "href": "http://www.freeyouth.me/%E7%A7%91%E5%B9%BB/three-body-theory"
+  } ,
+
+  {
+    "text": "Unity贴图 分离及合成透明通道",
+    "href": "http://www.freeyouth.me/unity/unity-rbg-a-shader"
   } 
 
 ])
