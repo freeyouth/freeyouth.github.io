@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Unity项目中 Lua 函数外local作用域问题，一直正确执行的代码纯属是偶然",
+		  "category"   : "Unity",
+		  "url"        : "http://www.freeyouth.me/unity/lua-localvar-scope",
+		  "date"       : "2015-09-12 00:00:00 +0800",
+		  "shortdate"  : "September 12, 2015"
+		} ,
+	
+		{
 		  "title"      : "Unity贴图 分离及合成透明通道",
 		  "category"   : "Unity",
 		  "url"        : "http://www.freeyouth.me/unity/unity-rbg-a-shader",
