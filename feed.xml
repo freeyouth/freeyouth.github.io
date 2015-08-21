@@ -9,98 +9,13 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://www.freeyouth.me/feed.xml" />
 <link rel="alternate" type="text/html" href="http://www.freeyouth.me/" />
-<updated>2015-08-22T02:51:50+08:00</updated>
+<updated>2015-08-22T03:12:24+08:00</updated>
 <id>http://www.freeyouth.me/</id>
 <author>
   <name>freeyouth</name>
   <uri>http://www.freeyouth.me/</uri>
   <email>freeyouth.gy@gmail.com</email>
 </author>
-
-
-<entry>
-  <title type="html"><![CDATA[Unity项目中 Lua 函数外local作用域问题，一直正确执行的代码纯属是偶然]]></title>
-  <link rel="alternate" type="text/html" href="http://www.freeyouth.me/unity/lua-localvar-scope"/>
-  <id>http://www.freeyouth.me/unity/lua-localvar-scope</id>
-  <published>2015-09-12T00:00:00+08:00</published>
-  <updated>2015-09-12T00:00:00-00:00</updated>
-  
-  <author>
-    <name>freeyouth</name>
-    <uri>http://www.freeyouth.me</uri>
-    <email>freeyouth.gy@gmail.com</email>
-  </author>
-  <category scheme="http://www.freeyouth.me/tags/#Unity" term="Unity" />
-  <content type="html">
-  
-    &lt;p&gt;项目中用到lua，但是一直用的不好，大量艰涩难懂的代码，也没起到热更新的作用。
-最近把lua弄的规范些，发挥lua应有的强大之处。
-进行模块化部分，首先想到的是自己定义表，然后把变量和函数赋值到表上。这是最容易实现和理解的。
-但是这样实现起来很麻烦，函数体内的变量引用必须指定表名。&lt;/p&gt;
-
-&lt;p&gt;然后寻找lua语言特性中有没有利于分包的，于是找到了module
-初步理解是module将整个文件中的全局变量和函数的定义放入到module指定表中，这样写代码时变量、函数放入到当前表。正符合我的需求。&lt;/p&gt;
-
-&lt;p&gt;实际操练中，遇到一个函数外local作用域的问题。
-我觉得函数外local应该避免使用，它作用域奇葩，会有人把不小心把它当全局定义。
-是不是面向过程语言函数外的local都应该避免使用？对于我们这些整天写高级语言的人说，可能第一反应以为它类似类私有变量。
-但是这两者是完全没什么联系的。对于搞不懂，又没什么卵用的做法，别用它就对了。&lt;/p&gt;
-
-&lt;p&gt;但是我翻看以前项目中其他同事的使用情况，定义了很多函数外的local，而且似乎在函数体中也能访问到这些local变量！
-几经测试研究猜测验证发现，首先这些代码的确是能够正确执行，但是这些”正确执行”纯属偶然&lt;/p&gt;
-
-&lt;p&gt;贴出能正确运行，但是有问题的代码：&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;InviteUI&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seeall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selfTable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InviteUI_table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;luaUnity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
-	&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;engineNetData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;depthManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;windowId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;gameObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selfTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gameObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;luaUnity&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selfTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gameObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selfTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;engineNetData&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selfTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;engineNetData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;depthManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selfTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depthManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;windowId&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selfTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;windowId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-		&lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;其他使用以上变量的逻辑代码&lt;/span&gt;
-		
-	&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
-
-	&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;depthManger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;removeXXXX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Start,Close在任意时候，都由用户相关的操作触发调用。&lt;/p&gt;
-
-&lt;p&gt;首先说出他错误地方，local定义的变量并不是全局变量，不会被放入InviteUI表里。
-这种函数外定义local的做法也会让变量的作用变得不清晰，应该坚决杜绝这种做法。
-去掉local变量，定义全局变量就OK，其他函数便可以在任意时候访问到了。&lt;/p&gt;
-
-&lt;p&gt;而以上代码能够正确执行，我觉得大概是这样一个过程：
-Unity加载了该段lua之后，首先(第一个)调用了Start函数，此时会对该文件进行处理，将函数外的local变量压入栈中，然后压入Start函数，此时selfTable的确是存在的。
-然后当对gameObject,luaUnity进行赋值的时候，实际上是并不是对local变量复制，而是对当前模块中的全局变量复制，也就是InviteUI表中的变量赋值。&lt;/p&gt;
-
-&lt;p&gt;当用户点击关闭时，Unity调用了Close方法，此时local变量已经全部不存在了，它的生命周期在第一次函数调用时已经结束。
-而depthManager是当前模块的全局变量，绝对不是local所定义的那个。
-如果换个顺序执行，这些代码就工作不了了。&lt;/p&gt;
-
-&lt;p&gt;验证很简单，定义一个初值为0.5的local变量，然后在Start，Close里打印出来，Start是可以找到的，Close应该找不到。
-这个是我的猜测，后来简单测试下结果也一致。&lt;/p&gt;
-
-&lt;p&gt;最后最重要的东西在重复下,
-函数外local不要用！
-函数外local不要用！
-函数外local不要用！&lt;/p&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://www.freeyouth.me/unity/lua-localvar-scope&quot;&gt;Unity项目中 Lua 函数外local作用域问题，一直正确执行的代码纯属是偶然&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;http://www.freeyouth.me&quot;&gt;Notepad&lt;/a&gt; on September 12, 2015.&lt;/p&gt;</content>
-</entry>
 
 
 <entry>

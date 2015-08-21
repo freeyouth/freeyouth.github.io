@@ -18,11 +18,6 @@ callback([
   {
     "text": "Unity贴图 分离及合成透明通道",
     "href": "http://www.freeyouth.me/unity/unity-rbg-a-shader"
-  } ,
-
-  {
-    "text": "Unity项目中 Lua 函数外local作用域问题，一直正确执行的代码纯属是偶然",
-    "href": "http://www.freeyouth.me/unity/lua-localvar-scope"
   } 
 
 ])
