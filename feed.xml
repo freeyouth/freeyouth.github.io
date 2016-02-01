@@ -3,34 +3,54 @@
 
 
 
-  
-
 <title type="text">Notepad</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://www.freeyouth.me/feed.xml" />
-<link rel="alternate" type="text/html" href="http://www.freeyouth.me/" />
-<updated>2015-08-22T03:12:24+08:00</updated>
-<id>http://www.freeyouth.me/</id>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="/" />
+<updated>2016-02-01T17:06:48+08:00</updated>
+<id>/</id>
 <author>
   <name>freeyouth</name>
-  <uri>http://www.freeyouth.me/</uri>
+  <uri>/</uri>
   <email>freeyouth.gy@gmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[]]></title>
+  <link rel="alternate" type="text/html" href="/weibo/noname"/>
+  <id>/weibo/noname</id>
+  <published>2016-02-01T00:00:00+08:00</published>
+  <updated>2016-02-01T00:00:00-00:00</updated>
+  
+  <author>
+    <name>freeyouth</name>
+    <uri></uri>
+    <email>freeyouth.gy@gmail.com</email>
+  </author>
+  <category scheme="/tags/#weibo" term="weibo" />
+  <content type="html">
+  
+    
+
+  
+  &lt;p&gt;&lt;a href=&quot;/weibo/noname&quot;&gt;&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;&quot;&gt;Notepad&lt;/a&gt; on February 01, 2016.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Unity贴图 分离及合成透明通道]]></title>
-  <link rel="alternate" type="text/html" href="http://www.freeyouth.me/unity/unity-rbg-a-shader"/>
-  <id>http://www.freeyouth.me/unity/unity-rbg-a-shader</id>
+  <link rel="alternate" type="text/html" href="/unity/unity-rbg-a-shader"/>
+  <id>/unity/unity-rbg-a-shader</id>
   <published>2015-09-11T00:00:00+08:00</published>
   <updated>2015-09-11T00:00:00-00:00</updated>
   
   <author>
     <name>freeyouth</name>
-    <uri>http://www.freeyouth.me</uri>
+    <uri></uri>
     <email>freeyouth.gy@gmail.com</email>
   </author>
-  <category scheme="http://www.freeyouth.me/tags/#Unity" term="Unity" />
+  <category scheme="/tags/#Unity" term="Unity" />
   <content type="html">
   
     &lt;p&gt;贴图分离透明通道的相关好处，可以查看这篇文章。
@@ -40,22 +60,22 @@
 
 &lt;p&gt;首先把32bits的透明图片分成两张24bits的不透明图片&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;span class=&quot;na&quot;&gt;[MenuItem(&amp;quot;Assets/Depart RGB and Alpha Channel&amp;quot;)]&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;MenuItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Assets/Depart RGB and Alpha Channel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;SeperateAllTexturesRGBandAlphaChannel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputRGBPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EditorUtility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SaveFilePanel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;SaveRGBResource&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;New Resource&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;png&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputAlphaPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EditorUtility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SaveFilePanel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;SaveAlphaResource&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;New Resource&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;png&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputRGBPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EditorUtility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SaveFilePanel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SaveRGBResource&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;New Resource&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputAlphaPath&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EditorUtility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SaveFilePanel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SaveAlphaResource&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;New Resource&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;Texture2D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Selection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;activeObject&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Texture2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LogError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Load Texture Failed&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;LogError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Load Texture Failed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Texture2D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgbTex&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Texture2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextureFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RGB24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;rgbTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetPixels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetPixels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;rgbTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Texture2D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgbTex&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Texture2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextureFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RGB24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;rgbTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SetPixels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;GetPixels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;rgbTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
-        &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourceColors&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetPixels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourceColors&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;GetPixels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colorsAlpha&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourceColors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourceColors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -63,15 +83,15 @@
             &lt;span class=&quot;n&quot;&gt;colorsAlpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourceColors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;colorsAlpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourceColors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Texture2D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alphaTex&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Texture2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextureFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RGB24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;alphaTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetPixels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colorsAlpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;alphaTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Texture2D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alphaTex&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Texture2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sourcetex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextureFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RGB24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;alphaTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SetPixels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colorsAlpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;alphaTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
-        &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgbTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EncodeToPNG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteAllBytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outputRGBPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alphabytes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alphaTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EncodeToPNG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteAllBytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outputAlphaPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alphabytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgbTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;EncodeToPNG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteAllBytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outputRGBPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alphabytes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alphaTex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;EncodeToPNG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteAllBytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outputAlphaPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alphabytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;任意选择一张透明的xxx.png，执行上面命令保存出两张不透明图片，分别为，xxx_RGB.png，xxx_Alpha.png&lt;/p&gt;
 
@@ -89,15 +109,15 @@
 
 &lt;h3 id=&quot;shadershader&quot;&gt;修改shader,用来合成两张不透明的图片。shader很简单。&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;fixed4 frag &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;v2f IN&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; : COLOR
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;	fixed4 frag &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;v2f IN&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; : COLOR
 	&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		//fixed4 &lt;span class=&quot;nv&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; tex2D&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;_MainTex, IN.texcoord&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; * IN.color&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		//return col&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		fixed4 col&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-		col.rgb &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; tex2D&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;_MainTex, IN.texcoord&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.rgb&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-		col.a &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; tex2D&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;_AlphaTex, IN.texcoord&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.r&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; col * IN.color&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+		//fixed4 col &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; tex2D&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;_MainTex, IN.texcoord&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; IN.color;
+		//return col;
+		fixed4 col;  
+		col.rgb &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; tex2D&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;_MainTex, IN.texcoord&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.rgb;  
+		col.a &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; tex2D&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;_AlphaTex, IN.texcoord&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.r;  
+		&lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;col &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; IN.color;  
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;选择上面两张图片到的材质球上，&lt;/p&gt;
 
@@ -113,23 +133,23 @@
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://www.freeyouth.me/unity/unity-rbg-a-shader&quot;&gt;Unity贴图 分离及合成透明通道&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;http://www.freeyouth.me&quot;&gt;Notepad&lt;/a&gt; on September 11, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/unity/unity-rbg-a-shader&quot;&gt;Unity贴图 分离及合成透明通道&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;&quot;&gt;Notepad&lt;/a&gt; on September 11, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[三体读后感之硬科幻]]></title>
-  <link rel="alternate" type="text/html" href="http://www.freeyouth.me/%E7%A7%91%E5%B9%BB/three-body-theory"/>
-  <id>http://www.freeyouth.me/%E7%A7%91%E5%B9%BB/three-body-theory</id>
+  <link rel="alternate" type="text/html" href="/%E7%A7%91%E5%B9%BB/three-body-theory"/>
+  <id>/%E7%A7%91%E5%B9%BB/three-body-theory</id>
   <published>2015-08-28T00:00:00+08:00</published>
   <updated>2015-08-28T00:00:00-00:00</updated>
   
   <author>
     <name>freeyouth</name>
-    <uri>http://www.freeyouth.me</uri>
+    <uri></uri>
     <email>freeyouth.gy@gmail.com</email>
   </author>
-  <category scheme="http://www.freeyouth.me/tags/#%E7%A7%91%E5%B9%BB" term="科幻" />
+  <category scheme="/tags/#%E7%A7%91%E5%B9%BB" term="科幻" />
   <content type="html">
   
     &lt;p&gt;刚刚读完三体三部，感觉第一二部很好看，与现实差距不远，多少我还是能懂的。
@@ -190,23 +210,23 @@
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://www.freeyouth.me/%E7%A7%91%E5%B9%BB/three-body-theory&quot;&gt;三体读后感之硬科幻&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;http://www.freeyouth.me&quot;&gt;Notepad&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/%E7%A7%91%E5%B9%BB/three-body-theory&quot;&gt;三体读后感之硬科幻&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;&quot;&gt;Notepad&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Unity Android IOS 命令行打包]]></title>
-  <link rel="alternate" type="text/html" href="http://www.freeyouth.me/unity/unity_android_ios_pack"/>
-  <id>http://www.freeyouth.me/unity/unity_android_ios_pack</id>
+  <link rel="alternate" type="text/html" href="/unity/unity-android-ios-pack"/>
+  <id>/unity/unity_android_ios_pack</id>
   <published>2015-08-18T00:00:00+08:00</published>
   <updated>2015-08-18T00:00:00-00:00</updated>
   
   <author>
     <name>freeyouth</name>
-    <uri>http://www.freeyouth.me</uri>
+    <uri></uri>
     <email>freeyouth.gy@gmail.com</email>
   </author>
-  <category scheme="http://www.freeyouth.me/tags/#Unity" term="Unity" />
+  <category scheme="/tags/#Unity" term="Unity" />
   <content type="html">
   
     &lt;h3 id=&quot;unityandroidios&quot;&gt;Unity导出Android&amp;amp;IOS工程&lt;/h3&gt;
@@ -214,84 +234,84 @@
 &lt;p&gt;一个导出Xcode工程的例子，Android工程类似。
 CommandBuild.cs&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;BuildXcodeProject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;BuildXcodeProject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;//设置编译参数&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;PlayerSettings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetScriptingDefineSymbolsForGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BuildTargetGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iPhone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;debug&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;//选择需要编译的场景&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;levels&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Assets/Resources/Scene/Test1.unity&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Assets/Resources/Scene/Test2.unity&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;//选择BuildTarget目标平台，xcode,android或者windows&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;BuildPipeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BuildPlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;levels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ios_Project_Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BuildTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iPhone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BuildOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;span class=&quot;c1&quot;&gt;//设置编译参数
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;PlayerSettings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SetScriptingDefineSymbolsForGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BuildTargetGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iPhone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;debug&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//选择需要编译的场景
+&lt;/span&gt;	&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;levels&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Assets/Resources/Scene/Test1.unity&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Assets/Resources/Scene/Test2.unity&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//选择BuildTarget目标平台，xcode,android或者windows
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;BuildPipeline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;BuildPlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;levels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ios_Project_Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BuildTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iPhone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BuildOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Unity -quit -batchmode -projectPath &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ProjectPath&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; -executeMethod CommmandBuild.BuildXcodeProject&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Unity -quit -batchmode -projectPath &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ProjectPath&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; -executeMethod CommmandBuild.BuildXcodeProject&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;androidapk&quot;&gt;Android工程导出apk&lt;/h3&gt;
 
 &lt;p&gt;1、ant方式，使用android update生成build.xml。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;//android list target 可列举出当前可用的target，-n 工程名，-p 工程路径
-android update -n &lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt; -p &lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt; -t target&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;//android list target 可列举出当前可用的target，-n 工程名，-p 工程路径
+android update -n &lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt; -p &lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt; -t target&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;2、gradle方式,新的项目都使用这种方式了。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;err&quot;&gt;//工程gradle修改&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;sigingConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;err&quot;&gt;releaseKeystore{&lt;/span&gt;
-		&lt;span class=&quot;err&quot;&gt;keyAlias&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;#39;xxx&amp;#39;&lt;/span&gt;
-		&lt;span class=&quot;err&quot;&gt;keyPassword&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;#39;1111111&amp;#39;&lt;/span&gt;
-		&lt;span class=&quot;err&quot;&gt;storeFile&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;file(&amp;#39;c:/xxx/release.keystore&amp;#39;)&lt;/span&gt;
-		&lt;span class=&quot;err&quot;&gt;storePassword&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;#39;111111&amp;#39;&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;buildTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;err&quot;&gt;release{&lt;/span&gt;
-		&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
-		&lt;span class=&quot;err&quot;&gt;siginingConfig&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;signingConfigs.releaseKeystore&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;err&quot;&gt;//工程gradle修改&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;sigingConfigs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;releaseKeystore{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;keyAlias&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;xxx&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;keyPassword&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;1111111&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;storeFile&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;file(&#39;c:/xxx/release.keystore&#39;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;storePassword&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;111111&#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;buildTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;release{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;siginingConfig&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;signingConfigs.releaseKeystore&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;//命令行执行
-gradle projectname:assembleRelease&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;//命令行执行
+gradle projectname:assembleRelease&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;ios-xcodeipa&quot;&gt;IOS xcode工程导出ipa&lt;/h3&gt;
 
 &lt;p&gt;1、编译出.app文件，从.app打包ipa&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;XCODE_PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;XCODE_PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
 xcodebuild -target Unity-iPhone clean
 xcodebuild -target Unity-iPhone -configuration Release
-xcrun -sdk iphoneos PackageApplication -v &lt;span class=&quot;nv&quot;&gt;$XCODE_PATH&lt;/span&gt;/build/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;APPNAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; -o &lt;span class=&quot;nv&quot;&gt;$WORK_PATH&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;IPANAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.ipa&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+xcrun -sdk iphoneos PackageApplication -v &lt;span class=&quot;nv&quot;&gt;$XCODE_PATH&lt;/span&gt;/build/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;APPNAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; -o &lt;span class=&quot;nv&quot;&gt;$WORK_PATH&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;IPANAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.ipa&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;2、从archive导出ipa。(貌似比从.app打包的ipa要小很多…)&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;//清理
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;//清理
 &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;XCODE__PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
 xcodebuild clean -project ./Unity-iPhone.xcodeproj -configuration &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CONFIGURATION&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; -alltargets
 //archive
-xcodebuild archive -project ./Unity-iPhone.xcodeproj -scheme &lt;span class=&quot;s2&quot;&gt;&amp;quot;Unity-iPhone&amp;quot;&lt;/span&gt; -archivePath sanguo.xcarchive -configuration Release
+xcodebuild archive -project ./Unity-iPhone.xcodeproj -scheme &lt;span class=&quot;s2&quot;&gt;&quot;Unity-iPhone&quot;&lt;/span&gt; -archivePath sanguo.xcarchive -configuration Release
 //从archive导出ipa
-xcodebuild -exportArchive -archivePath sanguo.xcarchive -exportPath &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;WORK_PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;IPANAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.ipa -exportFormat ipa -exportProvisioningProfile &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CODESIGN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+xcodebuild -exportArchive -archivePath sanguo.xcarchive -exportPath &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;WORK_PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;IPANAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.ipa -exportFormat ipa -exportProvisioningProfile &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CODESIGN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://www.freeyouth.me/unity/unity_android_ios_pack&quot;&gt;Unity Android IOS 命令行打包&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;http://www.freeyouth.me&quot;&gt;Notepad&lt;/a&gt; on August 18, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/unity/unity-android-ios-pack&quot;&gt;Unity Android IOS 命令行打包&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;&quot;&gt;Notepad&lt;/a&gt; on August 18, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[轻量级健身快速入门]]></title>
-  <link rel="alternate" type="text/html" href="http://www.freeyouth.me/%E5%81%A5%E8%BA%AB/lightweight-fitness"/>
-  <id>http://www.freeyouth.me/%E5%81%A5%E8%BA%AB/lightweight-fitness</id>
+  <link rel="alternate" type="text/html" href="/%E5%81%A5%E8%BA%AB/lightweight-fitness"/>
+  <id>/%E5%81%A5%E8%BA%AB/lightweight-fitness</id>
   <published>2015-08-11T00:00:00+08:00</published>
   <updated>2015-08-11T00:00:00-00:00</updated>
   
   <author>
     <name>freeyouth</name>
-    <uri>http://www.freeyouth.me</uri>
+    <uri></uri>
     <email>freeyouth.gy@gmail.com</email>
   </author>
-  <category scheme="http://www.freeyouth.me/tags/#%E5%81%A5%E8%BA%AB" term="健身" />
+  <category scheme="/tags/#%E5%81%A5%E8%BA%AB" term="健身" />
   <content type="html">
   
     &lt;h3 id=&quot;section&quot;&gt;现代病&lt;/h3&gt;
@@ -362,7 +382,7 @@ xcodebuild -exportArchive -archivePath sanguo.xcarchive -exportPath &lt;span cla
 &lt;p&gt;附： &lt;a href=&quot;/assets/囚徒健身六艺十式图文详解.xls&quot;&gt;健身六艺十式&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://www.freeyouth.me/%E5%81%A5%E8%BA%AB/lightweight-fitness&quot;&gt;轻量级健身快速入门&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;http://www.freeyouth.me&quot;&gt;Notepad&lt;/a&gt; on August 11, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/%E5%81%A5%E8%BA%AB/lightweight-fitness&quot;&gt;轻量级健身快速入门&lt;/a&gt; was originally published by freeyouth at &lt;a href=&quot;&quot;&gt;Notepad&lt;/a&gt; on August 11, 2015.&lt;/p&gt;</content>
 </entry>
 
 </feed>
