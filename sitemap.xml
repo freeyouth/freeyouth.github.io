@@ -45,7 +45,15 @@
         <loc>/tags/index.html</loc>
     </url>
     
+    <url>
+        <loc>/page2/</loc>
+    </url>
+    
 
+    
+    <url>
+        <loc>/%E9%9A%8F%E7%AC%94/misshome</loc>
+    </url>
     
     <url>
         <loc>/weibo/noname</loc>
